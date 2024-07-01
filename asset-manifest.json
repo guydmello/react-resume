@@ -1,21 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.0a5d9439.css",
-    "main.js": "/static/js/main.5305208b.js",
-    "static/js/453.ed3810f9.chunk.js": "/static/js/453.ed3810f9.chunk.js",
-    "static/media/Guy_DMello_Resume.pdf": "/static/media/Guy_DMello_Resume.e76464abebabd433628b.pdf",
-    "static/media/onboarding.png": "/static/media/onboarding.c8d5007e6ee27ca56777.png",
-    "static/media/ontario.png": "/static/media/ontario.a0017896dbd79be5aa89.png",
-    "static/media/weatherbot.png": "/static/media/weatherbot.b96d027c254debfd10ca.png",
-    "static/media/wordle.png": "/static/media/wordle.38ab662de7af9bf74559.png",
-    "static/media/rbc.png": "/static/media/rbc.215402eb3344e79a4ce8.png",
-    "index.html": "/index.html",
-    "main.0a5d9439.css.map": "/static/css/main.0a5d9439.css.map",
-    "main.5305208b.js.map": "/static/js/main.5305208b.js.map",
-    "453.ed3810f9.chunk.js.map": "/static/js/453.ed3810f9.chunk.js.map"
+    "main.css": "/Moley/static/css/main.0c671e29.css",
+    "main.js": "/Moley/static/js/main.976c8868.js",
+    "static/js/453.ed3810f9.chunk.js": "/Moley/static/js/453.ed3810f9.chunk.js",
+    "index.html": "/Moley/index.html",
+    "main.0c671e29.css.map": "/Moley/static/css/main.0c671e29.css.map",
+    "main.976c8868.js.map": "/Moley/static/js/main.976c8868.js.map",
+    "453.ed3810f9.chunk.js.map": "/Moley/static/js/453.ed3810f9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0a5d9439.css",
-    "static/js/main.5305208b.js"
+    "static/css/main.0c671e29.css",
+    "static/js/main.976c8868.js"
   ]
 }
