@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { FaGithub, FaLinkedin, FaEnvelope, FaBars, FaTimes, FaDownload, FaExternalLinkAlt } from 'react-icons/fa';
+import React, { useState, useEffect } from 'react';
+import { FaBars, FaTimes, FaDownload, FaExternalLinkAlt } from 'react-icons/fa';
 import './App.css';
 
 // Import images
@@ -82,11 +82,6 @@ const Sidebar = ({ isSidebarOpen, toggleSidebar, closeSidebar, toggleTheme, isDa
           </button>
         ))}
       </nav>
-      <div className="social-icons">
-        <a href="https://github.com/guydmello" target="_blank" rel="noopener noreferrer"><FaGithub /></a>
-        <a href="https://linkedin.com/in/guydmello" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
-        <a href="mailto:guyrdmello@gmail.com"><FaEnvelope /></a>
-      </div>
       <label className="theme-toggle">
         <input
           className="toggle-checkbox"
@@ -108,13 +103,29 @@ const Sidebar = ({ isSidebarOpen, toggleSidebar, closeSidebar, toggleTheme, isDa
   </aside>
 );
 
-const Navbar = ({ toggleSidebar, isSidebarOpen }) => (
+const Navbar = ({ toggleSidebar, isSidebarOpen, toggleTheme, isDarkMode }) => (
   <nav className={`navbar ${isSidebarOpen ? 'open' : ''}`}>
     <div className="navbar-content">
-      <h1>Guy D'Mello</h1>
       <button className="navbar-toggle" onClick={toggleSidebar}>
         {isSidebarOpen ? <FaTimes /> : <FaBars />}
       </button>
+      <label className="navbar-theme-toggle">
+        <input
+          className="toggle-checkbox"
+          type="checkbox"
+          onChange={toggleTheme}
+          checked={!isDarkMode}
+        />
+        <div className="toggle-slot">
+          <div className="sun-icon-wrapper">
+            <div className="iconify sun-icon" data-icon="feather-sun" data-inline="false"></div>
+          </div>
+          <div className="toggle-button"></div>
+          <div className="moon-icon-wrapper">
+            <div className="iconify moon-icon" data-icon="feather-moon" data-inline="false"></div>
+          </div>
+        </div>
+      </label>
     </div>
     <div className="navbar-links">
       {sections.map(section => (
@@ -254,7 +265,15 @@ const Contact = () => (
 
 const App = () => {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
-  const [isDarkMode, setDarkMode] = useState(true);
+  const [isDarkMode, setDarkMode] = useState(false); // Default to light mode
+
+  useEffect(() => {
+    if (isDarkMode) {
+      document.body.classList.add('dark-mode');
+    } else {
+      document.body.classList.remove('dark-mode');
+    }
+  }, [isDarkMode]);
 
   const toggleSidebar = () => {
     setSidebarOpen(!isSidebarOpen);
@@ -266,16 +285,16 @@ const App = () => {
 
   const toggleTheme = () => {
     setDarkMode(!isDarkMode);
-    if (isDarkMode) {
-      document.body.classList.add('light-mode');
-    } else {
-      document.body.classList.remove('light-mode');
-    }
   };
 
   return (
     <div className={`app ${isSidebarOpen ? 'sidebar-open' : ''}`}>
-      <Navbar toggleSidebar={toggleSidebar} isSidebarOpen={isSidebarOpen} />
+      <Navbar 
+        toggleSidebar={toggleSidebar} 
+        isSidebarOpen={isSidebarOpen} 
+        toggleTheme={toggleTheme} 
+        isDarkMode={isDarkMode} 
+      />
       <Sidebar 
         isSidebarOpen={isSidebarOpen} 
         toggleSidebar={toggleSidebar} 

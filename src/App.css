@@ -1,16 +1,16 @@
 :root {
-  --primary-bg-color: #0a192f;
-  --primary-text-color: #ccd6f6;
-  --accent-color: #64ffda;
-  --content-bg-color: rgba(255, 255, 255, 0.1);
-  --skill-bg-color: #00bcd4;
+  --primary-bg-color: #ffffff;
+  --primary-text-color: #000000;
+  --accent-color: #007acc;
+  --content-bg-color: rgba(0, 0, 0, 0.1);
+  --skill-bg-color: #007acc;
   --font-family: 'Roboto', sans-serif;
-  --job-date-color: #8892b0;
-  --link-color: #64ffda;
-  --job-border-color: #233554;
+  --job-date-color: #555555;
+  --link-color: #007acc;
+  --job-border-color: #dddddd;
   --content-padding: 30px 15px;
   --max-content-width: 1200px;
-  --bold-text-color: #ffffff;
+  --bold-text-color: #000000;
 }
 
 body {
@@ -23,16 +23,16 @@ body {
   justify-content: center;
 }
 
-body.light-mode {
-  --primary-bg-color: #ffffff;
-  --primary-text-color: #000000;
-  --accent-color: #007acc;
-  --content-bg-color: rgba(0, 0, 0, 0.1);
-  --skill-bg-color: #007acc;
-  --job-date-color: #555555;
-  --link-color: #007acc;
-  --job-border-color: #dddddd;
-  --bold-text-color: #000000;
+body.dark-mode {
+  --primary-bg-color: #0a192f;
+  --primary-text-color: #ccd6f6;
+  --accent-color: #64ffda;
+  --content-bg-color: rgba(255, 255, 255, 0.1);
+  --skill-bg-color: #00bcd4;
+  --job-date-color: #8892b0;
+  --link-color: #64ffda;
+  --job-border-color: #233554;
+  --bold-text-color: #ffffff;
 }
 
 .app {
@@ -339,7 +339,7 @@ body.light-mode {
   background-color: var(--primary-bg-color);
   z-index: 1001;
   padding: 10px 15px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Added shadow */
 }
 
 .navbar .navbar-content {
@@ -381,6 +381,11 @@ body.light-mode {
   cursor: pointer;
 }
 
+.navbar-social-icons {
+  display: flex;
+  gap: 10px;
+}
+
 .bold-text {
   color: var(--bold-text-color);
 }
@@ -388,6 +393,7 @@ body.light-mode {
 @media (max-width: 768px) {
   .navbar {
     display: flex;
+    justify-content: space-between;
   }
 
   .sidebar {
@@ -410,6 +416,20 @@ body.light-mode {
     margin-left: 0;
     width: 100%;
     padding-top: 60px; /* Height of the navbar */
+  }
+
+  .navbar-theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    width: 60px; /* Adjusted width */
+    height: 30px; /* Adjusted height */
+    border: 2px solid var(--accent-color);
+    border-radius: 30px; /* Ensures the button is fully rounded */
+    background-color: var(--primary-bg-color);
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
   }
 }
 
